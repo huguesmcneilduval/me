@@ -7,15 +7,24 @@ continuousDeployment(
 	configGitBranch: 'master',
 	config: [
 		parent: "duvalhub/parent.yml",
- 	 app: [
+		app: [
 			group: "huguesmcneilduval"
 		],
- 	 strategy:  [
+ 		strategy:  [
 			type: "ONE_BRANCH"
 		],
 		build: [
 			builder: "none",
- 	   container: "nginx"
+ 	  	container: "nginx"
+		],
+		deploy: [
+			platforms: [
+				prod: [
+					hostnames: [
+						"huguesmcneilduval.duvalhub.com"
+					]
+				]
+			]
 		]
 	]
 )

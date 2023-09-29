@@ -4,12 +4,15 @@
 ]) _
 
 continuousDeployment(config: [
-    app: [],
-    strategy:  [
-        type: "ONE_BRANCH"
-		],
-    build: [
-        builder: "none",
-        container: "nginx"
-		]
+	parent: "duvalhub/parent.yml",
+  app: [
+		group: "huguesmcneilduval"
+	],
+  strategy:  [
+		type: "ONE_BRANCH"
+	],
+	build: [
+		builder: "none",
+    container: "nginx"
+	]
 ])

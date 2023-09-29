@@ -6,10 +6,10 @@
 continuousDeployment(config: [
     app: [],
     strategy:  [
-        type: ONE_BRANCH
+        type: "ONE_BRANCH"
 		],
     build: [
-        builder: none,
-        container: nginx
+        builder: "none",
+        container: "nginx"
 		]
 ])

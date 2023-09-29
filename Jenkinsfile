@@ -3,16 +3,19 @@
     'shared-library@improvement/allow-config-from-Jenkinsfile'
 ]) _
 
-continuousDeployment(config: [
-	parent: "duvalhub/parent.yml",
-  app: [
-		group: "huguesmcneilduval"
-	],
-  strategy:  [
-		type: "ONE_BRANCH"
-	],
-	build: [
-		builder: "none",
-    container: "nginx"
+continuousDeployment(
+	configGitBranch: 'master',
+	config: [
+		parent: "duvalhub/parent.yml",
+ 	 app: [
+			group: "huguesmcneilduval"
+		],
+ 	 strategy:  [
+			type: "ONE_BRANCH"
+		],
+		build: [
+			builder: "none",
+ 	   container: "nginx"
+		]
 	]
-])
+)
